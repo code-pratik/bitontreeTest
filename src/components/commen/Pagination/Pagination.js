@@ -1,8 +1,10 @@
 import React from "react";
 import PaginationBtn from "../Btns/PaginationBtn/PaginationBtn";
 import Ellipsis from "./components/Ellipsis";
+import { useParams } from "react-router-dom";
 
 const Pagination = ({ pages, nextPage, prevPage, searchValue, searchType }) => {
+  const { page } = useParams();
   const paginationBtns = [];
   const visiblePagesBtns = 10;
 
@@ -33,6 +35,7 @@ const Pagination = ({ pages, nextPage, prevPage, searchValue, searchType }) => {
         nextPage={nextPage}
         searchType={searchType}
         searchValue={searchValue}
+        active={+page === i ? true : false}
       />
     );
   }

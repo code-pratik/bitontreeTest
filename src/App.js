@@ -30,6 +30,7 @@ function App() {
             <Route path="/characters/:id" element={<CharcterInfo />} />
             <Route path="*" element={<Navigate replace to="/" />} />
           </Route>
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
     </div>

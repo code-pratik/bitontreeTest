@@ -12,6 +12,7 @@ const PaginationBtn = ({
   nextPage,
   searchType,
   searchValue,
+  active,
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,7 +31,11 @@ const PaginationBtn = ({
   };
   return (
     <button
-      className={`flex ${padding}  items-center justify-center w-8 h-8 text-sm font-semibold border rounded shadow-md bg-[#318AEF] text-white border-transparent  dark:bg-gray-900 dark:text-violet-400 dark:border-violet-400`}
+      className={`flex ${padding}  items-center justify-center w-8 h-8 text-sm font-semibold border rounded shadow-md${`flex ${padding} items-center justify-center w-8 h-8 text-sm font-semibold border rounded shadow-md ${
+        active
+          ? "  dark:bg-gray-900 dark:text-violet-500 dark:border-violet-200  bg-blue-600 text-white border-transparent "
+          : " dark:bg-gray-900 dark:text-violet-400 dark:border-violet-400 bg-[#318AEF] text-white border-transparent "
+      }`}`}
       onClick={handelPage}
       disabled={disable}
     >
